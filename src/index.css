@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'JingnanMaiyuan';
+  src: url('./assets/fonts/JingnanMaiyuan.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GudianKebonSongti';
+  src: url('./assets/fonts/GudianKebonSongti.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    background-color: #FAF6ED;
+    color: #2C2416;
+    font-family: 'JingnanMaiyuan', "ZCOOL KuaiLe", cursive;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'GudianKebonSongti', serif;
+  }
+}
+
+@layer components {
+  .manga-border {
+    @apply border-2 border-secondary;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-btn hover:scale-105 transition-transform duration-300;
+  }
+
+  .glass-nav {
+    @apply bg-[rgba(250,246,237,0.92)] backdrop-blur-md shadow-lg rounded-[16px];
+  }
+}
+
+/* Custom animations if needed */
+.cake-fall {
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
