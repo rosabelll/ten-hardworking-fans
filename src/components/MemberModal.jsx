@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Quote, Camera, MapPin, Calendar, GraduationCap } from 'lucide-react';
+import { img } from '../utils/paths';
 
 const MemberModal = ({ member, isOpen, onClose }) => {
   if (!member) return null;
@@ -36,7 +37,7 @@ const MemberModal = ({ member, isOpen, onClose }) => {
             {/* Left: Character Portrait */}
             <div className="w-full md:w-[35%] h-[30vh] md:h-auto relative group overflow-hidden flex-shrink-0">
               <img 
-                src={member.images[1] || member.images[0]} 
+                src={img(member.images[1] || member.images[0])} 
                 alt={member.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

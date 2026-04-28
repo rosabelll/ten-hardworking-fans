@@ -1,33 +1,34 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { img } from '../utils/paths';
 
 const HeroParallax = ({ onNavigate }) => {
   const containerRef = useRef(null);
 
-  const pImages = [
+  const pImages = useMemo(() => [
     [
-      "/images/hero/P1-1.png",
-      "/images/hero/P1-2.jpg",
-      "/images/hero/P1-3.jpg",
+      img("/images/hero/P1-1.png"),
+      img("/images/hero/P1-2.jpg"),
+      img("/images/hero/P1-3.jpg"),
     ],
     [
-      "/images/hero/P2-1.jpg",
-      "/images/hero/P2-2.jpg",
-      "/images/hero/P2-3.jpg",
+      img("/images/hero/P2-1.jpg"),
+      img("/images/hero/P2-2.jpg"),
+      img("/images/hero/P2-3.jpg"),
     ],
     [
-      "/images/hero/P3-1.jpg",
-      "/images/hero/P3-3.jpg",
-      "/images/hero/P3-4.jpg",
-      "/images/hero/P3-5.jpg",
+      img("/images/hero/P3-1.jpg"),
+      img("/images/hero/P3-3.jpg"),
+      img("/images/hero/P3-4.jpg"),
+      img("/images/hero/P3-5.jpg"),
     ],
     [
-      "/images/hero/P4-1.jpg",
-      "/images/hero/P4-2.jpg",
-      "/images/hero/P4-3.jpg",
-      "/images/hero/P4-4.png",
+      img("/images/hero/P4-1.jpg"),
+      img("/images/hero/P4-2.jpg"),
+      img("/images/hero/P4-3.jpg"),
+      img("/images/hero/P4-4.png"),
     ],
-  ];
+  ], []);
 
   const [imageIndices, setImageIndices] = useState([0, 0, 0, 0]);
 

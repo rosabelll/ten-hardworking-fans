@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { img } from './utils/paths'
 import Navbar from './components/Navbar'
 import HeroParallax from './components/HeroParallax'
 import MemberCard from './components/MemberCard'
@@ -146,9 +147,9 @@ function App() {
         <motion.img
           key={currentView}
           src={
-            currentView === 'members' ? '/images/members-bg.png' :
-            currentView === 'works' ? '/images/works/bg-works.jpg' :
-            '/images/encyclopedia-bg.png'
+            currentView === 'members' ? img('/images/members-bg.png') :
+            currentView === 'works' ? img('/images/works/bg-works.jpg') :
+            img('/images/encyclopedia-bg.png')
           }
           alt=""
           initial={{ opacity: 0 }}

@@ -4,6 +4,7 @@ import {
   Calendar, Music, ExternalLink, PlayCircle, 
   ChevronLeft, ChevronRight, Play, Headphones 
 } from 'lucide-react';
+import { img } from '../utils/paths';
 
 // --- Sub-components for Music Section ---
 
@@ -18,7 +19,7 @@ const PlayableTrackCard = ({ track }) => (
   >
     <div className="flex gap-4 mb-4">
       <div className="w-20 h-20 rounded-lg overflow-hidden bg-primary/10 flex-shrink-0">
-        <img src={track.cover} alt={track.title} className="w-full h-full object-cover" onError={(e) => e.target.src = 'https://placehold.co/100x100?text=Cover'} />
+        <img src={img(track.cover)} alt={track.title} className="w-full h-full object-cover" onError={(e) => e.target.src = 'https://placehold.co/100x100?text=Cover'} />
       </div>
       <div className="flex-1">
         <h4 className="text-lg font-bold text-[#2C2416] mb-1">{track.title}</h4>
@@ -71,7 +72,7 @@ const AlbumCard = ({ album }) => (
   >
     <div className="p-6 pb-0 flex justify-center">
       <div className="w-3/4 aspect-square relative overflow-hidden rounded-lg shadow-md transition-transform duration-700 group-hover:scale-105">
-        <img src={album.cover} alt={album.title} className="w-full h-full object-cover" onError={(e) => e.target.src = 'https://placehold.co/400x400?text=Album'} />
+        <img src={img(album.cover)} alt={album.title} className="w-full h-full object-cover" onError={(e) => e.target.src = 'https://placehold.co/400x400?text=Album'} />
         <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
       </div>
     </div>
@@ -295,7 +296,7 @@ const Works = () => {
                     >
                       <div className="aspect-[3/4.2] overflow-hidden relative">
                         <img 
-                          src={item.img} 
+                          src={img(item.img)} 
                           alt={item.title} 
                           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                           onError={(e) => { e.target.src = `https://placehold.co/400x560?text=${item.title}` }}

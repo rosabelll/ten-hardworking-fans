@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { img } from '../utils/paths';
 
 const MemberCard = ({ member, onClick }) => {
   return (
@@ -11,7 +12,7 @@ const MemberCard = ({ member, onClick }) => {
       <div className="bg-white rounded-card manga-border overflow-hidden shadow-warm transition-shadow group-hover:shadow-2xl">
         <div className="aspect-[4/5] overflow-hidden">
           <img 
-            src={member.images[0]} 
+            src={img(member.images[0])} 
             alt={member.name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
